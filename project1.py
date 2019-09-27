@@ -1,8 +1,14 @@
+# Данная программа созданна для перевода объема бензина из галлонов в литры,
+# нахождения объема углекислого газа, эквивалентного объема этанола
+# и нахождения стоимости бензина в долларах
+# Программа находит средний объем бензина, расходуемого на человека
+# и находит расход бензина за день в городе и за год в стране
+
 import math
 print ("Объем бензина в галлонах:")
 fuel = float(input())
-fuel2 = fuel*3.758
-barrel = math.ceil(fuel2/19.5)
+fuel2 = fuel * 3.758
+barrel = math.ceil(fuel2 / 19.5)
 gasoline = barrel * 20
 energy = fuel * 115000
 ethanol = round((energy/75700),2)
@@ -16,14 +22,18 @@ print ("Стоимость:", price, "USD")
 
 print ("Количество людей, которые водят машину в городе:")
 people = float(input())
-print ("Количество бензина, потраченного в день:")
-amount_of_fuel = float(input())
+print ("Количество бензина, потраченного за день в городе:")
+amount_of_fuel = float(input())                                   # находим средний объем бензина на человека в городе
 average_consumption = amount_of_fuel / people
 fuel_a_day = int(average_consumption * people)
-fuel_a_year = int(fuel_a_day * 365)
+print ("Расход бензина за день в вашем городе:", fuel_a_day, "литров")
 
-print ("Количество безина, проданное за день:", average_consumption)
-print ("Количество бензина, проданного за день в вашем городе:", fuel_a_day, "литров")
-print ("Количество бензина, проданного за год в вашей стране:", fuel_a_year, "литров")
+print("Количество людей, которые водят машину в стране:")
+people2 = float(input())
+print("Количество бензина, потраченного за день в стране:")
+amount_of_fuel2 = float(input())                                  # находим средний объем бензина на человека в стране  
+average_consumption2= amount_of_fuel2 / people2
+fuel_a_year = int(average_consumption2 * 365)
+print ("Расход бензина за год в вашей стране:", fuel_a_year, "литров")
 
 
